@@ -30,34 +30,36 @@ class _CategoryFilterState extends State<CategoryFilter> {
         Wrap(
           spacing: 8,
           runSpacing: 8,
-          children: categories.map((category) {
-            final selected = filters.contains(category);
-            return FilterChip(
-              showCheckmark: false,
-              padding: EdgeInsets.all(12),
-              selected: selected,
-              onSelected: (val) {
-                setState(() {
-                  val
-                      ? filters.add(category)
-                      : filters.removeWhere((filtered) => category == filtered);
-                });
-              },
-              backgroundColor: const Color.fromRGBO(0, 0, 0, 0.05),
-              selectedColor: Colors.white,
-              label: Text(
-                category,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: selected
-                      ? const Color.fromRGBO(210, 120, 225, 1)
-                      : const Color.fromRGBO(0, 0, 75, 0.5),
-                ),
-              ),
-            );
-          }).toList(),
+          children: categories.map(renderChip).toList(),
         )
       ],
+    );
+  }
+
+  FilterChip renderChip(category) {
+    final selected = filters.contains(category);
+    return FilterChip(
+      showCheckmark: false,
+      padding: EdgeInsets.all(12),
+      selected: selected,
+      onSelected: (val) {
+        setState(() {
+          val
+              ? filters.add(category)
+              : filters.removeWhere((filtered) => category == filtered);
+        });
+      },
+      backgroundColor: const Color.fromRGBO(0, 0, 0, 0.05),
+      selectedColor: Colors.white,
+      label: Text(
+        category,
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: selected
+              ? const Color.fromRGBO(210, 120, 225, 1)
+              : const Color.fromRGBO(0, 0, 75, 0.5),
+        ),
+      ),
     );
   }
 }
