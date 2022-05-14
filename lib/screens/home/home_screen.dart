@@ -17,6 +17,27 @@ class HomeScreen extends StatelessWidget {
             SearchBar(),
             SizedBox(height: 32.0),
             CategoryFilter(),
+            SizedBox(height: 40.0),
+            DropdownButton<String>(
+              underline: Container(),
+              items: ['Popular', 'Hot', 'Top']
+                  .map(
+                    (filter) => DropdownMenuItem<String>(
+                      value: filter,
+                      child: Text(
+                        filter,
+                      ),
+                    ),
+                  )
+                  .toList(),
+              onChanged: (_) {},
+              value: 'Popular',
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ],
         ),
       ),
