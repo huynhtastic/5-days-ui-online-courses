@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(24.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SearchBar(),
             SizedBox(height: 32.0),
