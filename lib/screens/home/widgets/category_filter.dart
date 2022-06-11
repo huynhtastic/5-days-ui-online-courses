@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../models/course_categories.dart';
 
 class CategoryFilter extends StatefulWidget {
   @override
@@ -6,15 +7,6 @@ class CategoryFilter extends StatefulWidget {
 }
 
 class _CategoryFilterState extends State<CategoryFilter> {
-  var categories = [
-    'Productivity',
-    'Art',
-    'Design',
-    'Business',
-    'Communications',
-    '11+'
-  ];
-
   final filters = <String>[];
 
   @override
@@ -30,14 +22,15 @@ class _CategoryFilterState extends State<CategoryFilter> {
         Wrap(
           spacing: 8,
           runSpacing: 8,
-          children: categories.map(renderChip).toList(),
+          children: CourseCategories.values.map(renderChip).toList(),
         )
       ],
     );
   }
 
-  FilterChip renderChip(category) {
-    final selected = filters.contains(category);
+  FilterChip renderChip(CourseCategories category) {
+    final name = category.name;
+    final selected = filters.contains(name);
     return FilterChip(
       showCheckmark: false,
       padding: EdgeInsets.all(12),
@@ -45,14 +38,14 @@ class _CategoryFilterState extends State<CategoryFilter> {
       onSelected: (val) {
         setState(() {
           val
-              ? filters.add(category)
-              : filters.removeWhere((filtered) => category == filtered);
+              ? filters.add(name)
+              : filters.removeWhere((filtered) => name == filtered);
         });
       },
       backgroundColor: const Color.fromRGBO(0, 0, 0, 0.05),
       selectedColor: Colors.white,
       label: Text(
-        category,
+        name,
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: selected

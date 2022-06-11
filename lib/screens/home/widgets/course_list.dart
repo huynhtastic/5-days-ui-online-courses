@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:two_online_courses/models/course_categories.dart';
 
 import '../../../models/course_info.dart';
 import '../../course_detail/course_detail_screen.dart';
@@ -14,6 +15,7 @@ List<CourseInfo> courses = [
     instructorName: 'Chef Christoff',
     semanticsLabel: 'Baking Class Logo',
     backgroundColor: const Color.fromRGBO(193, 225, 193, 1),
+    category: CourseCategories.Cooking,
   ),
   CourseInfo(
     name: 'Cutting hair without a Richard',
@@ -24,6 +26,7 @@ List<CourseInfo> courses = [
     instructorAvatar: 'assets/images/hairstylist.png',
     semanticsLabel: 'Hairdresser Class Logo',
     backgroundColor: const Color.fromRGBO(248, 241, 174, 1),
+    category: CourseCategories.Hairstyling,
   )
 ];
 
