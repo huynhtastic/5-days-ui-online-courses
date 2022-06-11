@@ -19,18 +19,30 @@ class CourseInfo {
 
 List<CourseInfo> courses = [
   CourseInfo(
+    desc: 'Baking sourdough bread in the sun',
     image: 'assets/images/Baker-pana.svg',
-    semanticsLabel: 'Baking Class Logo',
     instructorAvatar: 'assets/images/chef.png',
     instructorName: 'Chef Christoff',
-    desc: 'Baking Sourdough bread with your digits',
+    semanticsLabel: 'Baking Class Logo',
+  ),
+  CourseInfo(
+    desc: 'Cutting hair without a Richard',
+    image: 'assets/images/Hairdresser-amico.svg',
+    instructorName: 'Hairdresser Door',
+    instructorAvatar: 'assets/images/hairstylist.png',
+    semanticsLabel: 'Hairdresser Class Logo',
   )
 ];
 
 class CourseList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Course(courses[0]);
+    return ListView.separated(
+      shrinkWrap: true,
+      itemBuilder: (_, i) => Course(courses[i]),
+      separatorBuilder: (_, __) => SizedBox(height: 16),
+      itemCount: courses.length,
+    );
   }
 }
 
