@@ -1,21 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-class CourseInfo {
-  String image;
-  String semanticsLabel;
-  String instructorAvatar;
-  String instructorName;
-  String desc;
-
-  CourseInfo({
-    @required this.image,
-    @required this.semanticsLabel,
-    @required this.instructorAvatar,
-    @required this.instructorName,
-    @required this.desc,
-  });
-}
+import '../../../models/course_info.dart';
 
 List<CourseInfo> courses = [
   CourseInfo(
