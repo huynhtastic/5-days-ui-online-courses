@@ -17,12 +17,28 @@ class CourseDetailScreen extends StatelessWidget {
         shadowColor: Color.fromRGBO(0, 0, 0, 0),
       ),
       body: Container(
+        height: double.infinity,
         child: Stack(
           children: [
             CourseImage(
               image: course.image,
               backgroundColor: course.backgroundColor,
               semanticsLabel: course.semanticsLabel,
+            ),
+            Positioned(
+              left: 0,
+              right: 0,
+              bottom: 0,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(32),
+                    topRight: Radius.circular(32),
+                  ),
+                ),
+                height: 560,
+              ),
             ),
           ],
         ),
