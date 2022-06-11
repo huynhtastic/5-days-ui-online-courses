@@ -4,6 +4,7 @@ import 'package:two_online_courses/models/course_categories.dart';
 
 import '../../../models/course_info.dart';
 import '../../course_detail/course_detail_screen.dart';
+import '../../../widgets/widgets.dart';
 
 List<CourseInfo> courses = [
   CourseInfo(
@@ -72,26 +73,9 @@ class Course extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.transparent,
-                      radius: 20,
-                      child: ClipOval(
-                        child: Image.asset(
-                          course.instructorAvatar,
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 16),
-                    Text(
-                      course.instructorName,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromRGBO(143, 151, 170, 1),
-                      ),
-                    ),
-                  ],
+                AuthorHeader(
+                  course,
+                  color: Color.fromRGBO(143, 151, 170, 1),
                 ),
                 SizedBox(height: 16),
                 Text(
