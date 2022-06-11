@@ -20,7 +20,7 @@ List<CourseInfo> courses = [
   CourseInfo(
     name: 'Cutting hair without a Richard',
     desc:
-        "Cutting hair with a Richard is the world's biggest trend since sliced bread, but Hairdresser Door's latest course brings hairstyling back to the basics. Join her in the newest craze and get your hair popping without a Richard!",
+        "Cutting hair with a Richard is easy, but cutting hair without a Richard is a symbol of mastery. Join Hairdresser Door as she shows you how to master the technique without a Richard, because using a Richard is too Richard. Nobody wants to be too Richard.",
     image: 'assets/images/Hairdresser-amico.svg',
     instructorName: 'Hairdresser Door',
     instructorAvatar: 'assets/images/hairstylist.png',

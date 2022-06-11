@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './widgets/widgets.dart';
+import 'widgets/widgets.dart';
 import '../../models/course_info.dart';
 
 class CourseDetailScreen extends StatelessWidget {
@@ -29,16 +29,7 @@ class CourseDetailScreen extends StatelessWidget {
               left: 0,
               right: 0,
               bottom: 0,
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(32),
-                    topRight: Radius.circular(32),
-                  ),
-                ),
-                height: 560,
-              ),
+              child: DetailSheet(course),
             ),
           ],
         ),
