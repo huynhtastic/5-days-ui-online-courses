@@ -1,7 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+class CourseInfo {
+  String image;
+  String semanticsLabel;
+  String instructorAvatar;
+  String instructorName;
+  String desc;
+
+  CourseInfo({
+    @required this.image,
+    @required this.semanticsLabel,
+    @required this.instructorAvatar,
+    @required this.instructorName,
+    @required this.desc,
+  });
+}
+
+List<CourseInfo> courses = [
+  CourseInfo(
+    image: 'assets/images/Baker-pana.svg',
+    semanticsLabel: 'Baking Class Logo',
+    instructorAvatar: 'assets/images/chef.png',
+    instructorName: 'Chef Christoff',
+    desc: 'Baking Sourdough bread with your digits',
+  )
+];
+
 class CourseList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Course(courses[0]);
+  }
+}
+
+class Course extends StatelessWidget {
+  final CourseInfo course;
+
+  Course(this.course, {Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,10 +49,10 @@ class CourseList extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(16)),
           ),
           child: SvgPicture.asset(
-            'assets/images/Baker-pana.svg',
+            course.image,
             height: 120,
             width: 120,
-            semanticsLabel: 'Baking Class Logo',
+            semanticsLabel: course.semanticsLabel,
           ),
         ),
         SizedBox(width: 16),
@@ -30,13 +67,13 @@ class CourseList extends StatelessWidget {
                     radius: 20,
                     child: ClipOval(
                       child: Image.asset(
-                        'assets/images/chef.png',
+                        course.instructorAvatar,
                       ),
                     ),
                   ),
                   SizedBox(width: 16),
                   Text(
-                    'Chef Christoff',
+                    course.instructorName,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Color.fromRGBO(143, 151, 170, 1),
@@ -46,7 +83,11 @@ class CourseList extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Baking Sourdough bread with your digits',
+                course.desc,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               )
