@@ -8,17 +8,6 @@ import '../../../widgets/widgets.dart';
 
 List<CourseInfo> courses = [
   CourseInfo(
-    name: 'Baking sourdough bread in the sun',
-    desc:
-        "Using an oven is hard. Pre-heating, setting the correct temperature, and correct rack placement are just a few things that make using an oven a pain. Chef Christoff answers all of these problems: use nature's oven instead.",
-    image: 'assets/images/Baker-pana.svg',
-    instructorAvatar: 'assets/images/chef.png',
-    instructorName: 'Chef Christoff',
-    semanticsLabel: 'Baking Class Logo',
-    backgroundColor: const Color.fromRGBO(193, 225, 193, 1),
-    category: CourseCategories.Cooking,
-  ),
-  CourseInfo(
     name: 'Cutting hair without a Richard',
     desc:
         "Cutting hair with a Richard is easy, but cutting hair without a Richard is a symbol of mastery. Join Hairdresser Door as she shows you how to master the technique without a Richard, because using a Richard is too Richard. Nobody wants to be too Richard.",
@@ -28,7 +17,22 @@ List<CourseInfo> courses = [
     semanticsLabel: 'Hairdresser Class Logo',
     backgroundColor: const Color.fromRGBO(248, 241, 174, 1),
     category: CourseCategories.Hairstyling,
-  )
+    languages: ['English', 'Vietnamese'],
+    lectureLength: '14 (2 hours, 14 mins)',
+  ),
+  CourseInfo(
+    name: 'Baking sourdough bread in the sun',
+    desc:
+        "Using an oven is hard. Pre-heating, setting the correct temperature, and correct rack placement are just a few things that make using an oven a pain. Chef Christoff answers all of these problems: use nature's oven instead.",
+    image: 'assets/images/Baker-pana.svg',
+    instructorAvatar: 'assets/images/chef.png',
+    instructorName: 'Chef Christoff',
+    semanticsLabel: 'Baking Class Logo',
+    backgroundColor: const Color.fromRGBO(193, 225, 193, 1),
+    category: CourseCategories.Cooking,
+    languages: ['English', 'Vietnamese', 'Norwegian'],
+    lectureLength: '18 (1 hour, 46 mins)',
+  ),
 ];
 
 class CourseList extends StatelessWidget {

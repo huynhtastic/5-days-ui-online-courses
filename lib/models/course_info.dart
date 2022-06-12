@@ -10,6 +10,8 @@ class CourseInfo {
   String desc;
   CourseCategories category;
   Color backgroundColor;
+  String lectureLength;
+  List<String> languages;
 
   CourseInfo({
     @required this.name,
@@ -20,5 +22,7 @@ class CourseInfo {
     @required this.desc,
     @required this.category,
     @required this.backgroundColor,
+    @required this.lectureLength,
+    @required this.languages,
   });
 }

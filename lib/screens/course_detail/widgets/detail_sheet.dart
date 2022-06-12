@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:two_online_courses/models/course_info.dart';
+
+import '../../../models/course_info.dart';
+import '../../../widgets/widgets.dart';
 
 class DetailSheet extends StatelessWidget {
   final CourseInfo course;
@@ -56,6 +58,43 @@ class DetailSheet extends StatelessWidget {
               ),
             ),
             SizedBox(height: 16),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16.0),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black38.withOpacity(0.1),
+                    blurRadius: 32,
+                    offset: const Offset(0, 10),
+                  ),
+                ],
+              ),
+              padding: EdgeInsets.all(16.0),
+              child: AuthorHeader(course),
+            ),
+            SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Lectures', style: TextStyle(color: Colors.grey)),
+                Text(
+                  course.lectureLength,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+            SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Languages', style: TextStyle(color: Colors.grey)),
+                Text(
+                  course.languages.join(', '),
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
+            )
           ],
         ),
       ),
